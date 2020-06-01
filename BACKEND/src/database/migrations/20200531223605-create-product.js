@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('files', {
+    return queryInterface.createTable('products', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -11,10 +11,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      path: {
+      price: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
+      },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      path: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -28,6 +36,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('files');
+    return queryInterface.dropTable('products');
   },
 };

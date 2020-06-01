@@ -1,10 +1,12 @@
 import Sequelize, { Model } from 'sequelize';
 
-class File extends Model {
+class Product extends Model {
   static init(sequelize) {
     super.init(
       {
         name: Sequelize.STRING,
+        price: Sequelize.STRING,
+        description: Sequelize.STRING,
         path: Sequelize.STRING,
       },
       {
@@ -16,4 +18,4 @@ class File extends Model {
   }
 }
 
-export default File;
+export default Product;
