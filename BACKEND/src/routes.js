@@ -18,7 +18,9 @@ routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
 
-routes.post('/products', upload.single('product'), ProductController.store);
-
+routes.post('/products', upload.single('path'), ProductController.store);
+//routes.post('/products', upload.single('product'), (req, res, next) => {
+  //return res.send(req.file);
+//});
 
 export default routes;
