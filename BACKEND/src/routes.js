@@ -22,5 +22,12 @@ routes.post('/products', upload.single('path'), ProductController.store);
 //routes.post('/products', upload.single('product'), (req, res, next) => {
   //return res.send(req.file);
 //});
+//listar produto
+routes.get('/products',  ProductController.index);
+
+//excluir produto
+//routes.delete('/products/:id',  ProductController.delete);
+
+routes.put('/products/:id',  ProductController.update);
 
 export default routes;
