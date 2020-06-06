@@ -30,7 +30,7 @@ class ProductController {
 
 
 const  destination  = req.file;
-const { name, price, description } = req.body;
+const { name, price, description, path } = req.body;
 
 
  const produto = await Product.update({
@@ -38,9 +38,11 @@ const { name, price, description } = req.body;
    name,
    price,
    description,
-   path: destination,
+  path,
+  //mesmacoisa em baixo
+   // path: destination,
 
-  }, {where: { }},
+  }//, {where: { }},
 
   );
 
@@ -76,10 +78,12 @@ const { name, price, description, path } = req.body;
    name,
    price,
    description,
-   path: destination,
+   path,
+//aqui ele pega por imagem, descomentar uando for fazer assim
+   //path: destination,
  });
 
-  return res.json(produto);
+  return res.json( produto);
 //return res.json(description);
   //return  await Product.create(req.body);
 //aqui pode apagar
