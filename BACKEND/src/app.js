@@ -1,10 +1,26 @@
 import express from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import routes from './routes';
 
 import './database';
-var app = express();
-app.use(cors());
+const app = express();
+
+//CORS
+app.use(
+	cors({
+		credentials: true,
+		origin: true
+	})
+);
+app.options('*', cors());
+//body-parser
+app.use(
+	bodyParser.urlencoded({
+		limit: '50mb',
+		extended: true
+	})
+);
 
 class App {
   constructor() {
