@@ -1,7 +1,0 @@
-{
-  "name": "SimpleCRUD",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}

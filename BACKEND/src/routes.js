@@ -3,6 +3,7 @@ import multer from 'multer';
 import multerConfig from './config/multer';
 
 import UserController from './app/controllers/UserController';
+
 //descomentar depois
 //import SessionController from './app/controllers/SessionController';
 
@@ -54,17 +55,6 @@ return res.status(200).send({});
 next();
 });
 
-
-
-
-
-
-
-
-
-
-
-
 const routes = new Router();
 const upload = multer(multerConfig);
 
@@ -91,6 +81,7 @@ routes.get('/products', cors(),  ProductController.index);
 //excluir produto
 //routes.delete('/products/:id',  ProductController.delete);
 
+//atualizar produto
 routes.put('/products/:id',  ProductController.update);
 
 export default routes;
