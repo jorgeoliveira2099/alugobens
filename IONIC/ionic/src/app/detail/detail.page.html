@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Student Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{student.first_name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>Details :</ion-card-subtitle>
+      <ul>
+        <li>First Name: {{student.first_name}}</li>
+        <li>Last Name: {{student.last_name}}</li>
+        <li>Email: {{student.email}}</li>
+      </ul>
+
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-button expand="block" slot="primary"> -->
+  <ion-button expand="block" routerLink="/edit/{{student.id}}">
+    <!-- <ion-icon slot="icon-only" name="create"></ion-icon> -->
+    Update
+  </ion-button>
+  <ion-button expand="block" (click)="delete(student.id)">
+    <!-- <ion-icon slot="icon-only" name="remove-circle"></ion-icon> -->
+    Remove
+  </ion-button>
+  <!-- </ion-button> -->
+</ion-content>
